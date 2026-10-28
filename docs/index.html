@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>blaze 小白中文教程 · xianyu110</title>
+  <meta name="description" content="indexable-inc/blaze 社区非官方中文入门：毫秒增量编译、安装、演示与平台说明。" />
+  <style>
+    :root { color-scheme: light dark; --bg:#0f1419; --fg:#e7ecf3; --muted:#9aa7b5; --card:#1a2330; --accent:#6cb6ff; --ok:#3dd68c; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f6f8fb; --fg:#1b2430; --muted:#5b6b7c; --card:#fff; --accent:#0066cc; --ok:#0a7a44; }
+    }
+    body { margin:0; font-family: ui-sans-serif, system-ui, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; }
+    main { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: 1.75rem; margin: 0 0 .5rem; }
+    .sub { color: var(--muted); margin-bottom: 1.5rem; }
+    .card { background: var(--card); border-radius: 12px; padding: 1.25rem 1.35rem; margin: 1rem 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+    a { color: var(--accent); }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+    pre { background: #0b1220; color: #d7e2f0; padding: 1rem; border-radius: 8px; overflow:auto; }
+    @media (prefers-color-scheme: light) { pre { background:#111827; } }
+    .ok { color: var(--ok); font-weight: 600; }
+    ul { padding-left: 1.2rem; }
+    footer { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
+    img.shot { max-width:100%; height:auto; border-radius:8px; margin:.75rem 0; border:1px solid rgba(127,127,127,.25); }
+    figcaption { color:var(--muted); font-size:.85rem; margin:.25rem 0 1rem; }
+    .tag-real { color:var(--ok); font-weight:600; }
+    .tag-schema { color:#e6a23c; font-weight:600; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>blaze 小白中文教程</h1>
+  <p class="sub">社区非官方导读 · 上游 <a href="https://github.com/indexable-inc/blaze">indexable-inc/blaze</a> · <a href="https://ix.dev/blaze">ix.dev/blaze</a></p>
+
+  <div class="card">
+    <p><span class="ok">完整图文教程</span>在 GitHub README（安装、增量演示、Windows 说明、踩坑）：</p>
+    <p><a href="https://github.com/xianyu110/awesome-blaze-zh#readme"><strong>打开 awesome-blaze-zh README →</strong></a></p>
+  </div>
+
+  <div class="card">
+    <h2>30 秒安装</h2>
+    <pre>curl -fsSL https://ix.dev/blaze | sh
+export PATH="$HOME/.cargo/bin:$PATH"
+cd your-rust-project && blaze build && blaze run</pre>
+  </div>
+
+  <div class="card">
+    <h2>本机 Linux 真实截图</h2>
+    <figure>
+      <img class="shot" src="images/01-install.png" alt="blaze 安装日志" loading="lazy" />
+      <figcaption><span class="tag-real">真实截图</span> · curl 安装 + toolchain 下载</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="images/03-build-first.png" alt="首次 blaze build" loading="lazy" />
+      <figcaption><span class="tag-real">真实截图</span> · 首次 blaze build（[blaze]）</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="images/04-build-incremental.png" alt="增量 blaze build" loading="lazy" />
+      <figcaption><span class="tag-real">真实截图</span> · 增量 build ~0.12s</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="images/05-run.png" alt="blaze run" loading="lazy" />
+      <figcaption><span class="tag-real">真实截图</span> · blaze run</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="images/06-windows-schematic.png" alt="Windows 说明示意图" loading="lazy" />
+      <figcaption><span class="tag-schema">示意图</span> · Windows MSVC：无官方安装器</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h2>记住三件事</h2>
+    <ul>
+      <li>主平台：<strong>Apple Silicon macOS + Linux</strong>；Windows 按官方 platforms.md</li>
+      <li>自带 toolchain、吃内存；最终以 <strong>cargo check / CI</strong> 为准</li>
+      <li>项目还年轻——有差异请开上游 Issue</li>
+    </ul>
+  </div>
+
+  <footer>
+    教程文本 MIT · 上游 MIT OR Apache-2.0 · 与 indexable-inc / ix 无官方隶属 · 2026-10-28
+  </footer>
+</main>
+</body>
+</html>
